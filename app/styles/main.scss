@@ -1,18 +1,120 @@
 // bower:scss
 // endbower
-html{
-  height:100%;
-  width:100%;
+html {
+  height: 100%;
+  width: 100%;
 }
+
 body {
-  height:100%;
-  width:100%;
-  margin:0;
-  padding:0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   font-family: "Microsoft YaHei UI Light";
   background: white;
 }
-a{
+@media screen and (min-width: 768px){
+  .header-moblie{
+    display: none;
+  }
+  .MainPage{
+    width: 65%;
+    margin-top:20px;
+  }
+  .header{
+    position: relative;
+    height: 80px;
+    width: 100%;
+    ul{
+      width: 100%;
+      li{
+        width: 6em;
+        padding-top: 35px;
+        height: 42px;
+      }
+    }
+
+  }
+  .nav{
+    padding-top: 20px;
+    width: 1180px;
+    ul{
+      width:1000px;
+      li{
+        width: 450px;
+        margin: 0 20px 20px;
+
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 768px){
+  .header-moblie{
+    display: block;
+  }
+  .MainPage{
+    width: 100%;
+    margin-top: 50px;
+  }
+  .header{
+    overflow: scroll;
+    overflow-x: hidden;
+    position: fixed;
+    z-index: 5;
+    top:0;
+    height: 100%;
+    width:55%;
+    background: white;
+    -webkit-transform: translate(-120%,0);
+    -moz-transform: translate(-120%,0);
+    -ms-transform: translate(-120%,0);
+    -o-transform: translate(-120%,0);
+    transform: translate(-120%,0);
+    ul{
+      margin:0 0;
+      z-index: 3;
+      width:100%;
+      padding: 0;
+      //padding-top:10%;
+      li{
+        width:100%;
+        border-bottom: 0.1px solid gainsboro;
+        height:3em;
+        a{
+          margin-top:1em;
+        }
+      }
+    }
+  }
+  .header-active{
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+  .nav{
+    width: 100%;
+    margin-top:0;
+    ul{
+      width: 100%;
+      padding:0;
+      margin-top: 60px;
+      li{
+        width:100%;
+        margin:0;
+      }
+    }
+  }
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   -ms-transition: all 0.35s;
@@ -22,34 +124,71 @@ a{
   color: black;
   display: block;
   float: left;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
-a:hover{
+
+a:hover {
   color: deepskyblue;
 }
+
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
 }
-
-.header{
-  height:80px;
+.header-moblie{
+  z-index: 1;
+  position: fixed;
+  top:0;
+  height:60px;
   width:100%;
+  background: white;
   box-shadow: gainsboro 1px 1px 50px;
 }
-.nav{
-  padding-top:20px;
-  height:auto;
-  width:1280px;
-  margin:0 auto;
-  ul{
-    margin:0 auto;
-    width:1000px;
+.header {
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  -ms-transition: all 0.35s;
+  -o-transition: all 0.35s;
+  transition: all 0.35s;
+
+  box-shadow: gainsboro 1px 1px 50px;
+  ul {
+    margin: 0;
     height: 100%;
-    li{
+    width: 100%;
+    li {
+      margin: 0;
+
+
+      float: left;
+      a {
+        width: 100%;
+        text-align: center;
+      }
+
+    }
+    li:hover {
+      border-bottom: orange solid 3px;
+    }
+    li-active{
+      border-bottom: orange solid 3px;
+    }
+  }
+}
+
+.nav {
+
+  height: auto;
+
+  margin: 0 auto;
+  ul {
+    margin-left:auto;
+    margin-right: auto;
+    height: 100%;
+    li {
       position: relative;
       -webkit-transition: all 0.5s;
       -moz-transition: all 0.5s;
@@ -57,42 +196,41 @@ a:hover{
       -o-transition: all 0.5s;
       transition: all 0.5s;
       float: left;
-      margin:0 20px 20px;
-      list-style-type: none;
-      height:150px;
-      width:450px;
-      background:  white;
-      box-shadow:gainsboro  1px 1px 50px;
 
-      .liIcon{
+      list-style-type: none;
+      height: 150px;
+
+      background: white;
+      box-shadow: gainsboro 1px 1px 50px;
+      cursor: pointer;
+      .liIcon {
         position: relative;
         -webkit-transition: all 0.5s;
         -moz-transition: all 0.5s;
         -ms-transition: all 0.5s;
         -o-transition: all 0.5s;
         transition: all 0.5s;
-        margin:10px;
+        margin: 10px;
         border-radius: 50%;
       }
-      .LinkArr{
+      .LinkArr {
         position: absolute;
-        top:0;
-        left:150px;
-
-        height:100%;
-font-family: "Microsoft YaHei UI Light";
+        top: 0;
+        left: 150px;
+        height: 100%;
+        font-family: "Microsoft YaHei UI Light";
         color: black;
       }
     }
-    li:hover .liIcon{
+    li:hover .liIcon {
       -webkit-transform: rotate(360deg);
       -moz-transform: rotate(360deg);
       -ms-transform: rotate(360deg);
       -o-transform: rotate(360deg);
       transform: rotate(360deg);
-     // -webkit-filter:blur(10px);
+      // -webkit-filter:blur(10px);
     }
-    li:hover{
+    li:hover {
       box-shadow: darkgrey 1px 1px 50px;
       color: black;
     }
@@ -100,3 +238,73 @@ font-family: "Microsoft YaHei UI Light";
   }
 
 }
+
+p1, .red {
+  color: red;
+}
+
+p2, .blue {
+  color: blue;
+}
+
+p3, .green {
+  color: green;
+}
+
+p4, .orange {
+  color: orange;
+}
+
+p5{
+  color: #AA1100;
+}
+.MainPage {
+
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2%;
+  box-shadow: gainsboro 1px 1px 50px;
+  h1 {
+    text-align: center;
+  }
+  p{
+    img{
+      margin-left: auto;
+      margin-right:auto;
+      width: 100%;
+    }
+  }
+
+}
+.footer{
+  position: absolute;
+  bottom: 0;
+  .footer-up{
+
+    height:100px;
+    box-shadow: 1px 1px 10px gainsboro;
+    background: white;
+  }
+}
+
+.blurBG{
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  -ms-transition: all 0.35s;
+  -o-transition: all 0.35s;
+  transition: all 0.35s;
+  display: none;
+  z-index: 3;
+  position: fixed;
+  top:0;
+  margin:0;
+  padding:0;
+  height:100%;
+  width:100%;
+  background: gray;
+  opacity: 0;
+}
+.blurBG-active{
+  opacity: 0.7;
+}
+
