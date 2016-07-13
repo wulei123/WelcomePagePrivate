@@ -11,7 +11,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Microsoft YaHei UI Light";
-  background: white;
+  background: whitesmoke;
 }
 @media screen and (min-width: 768px){
   .header-moblie{
@@ -19,24 +19,42 @@ body {
   }
   .MainPage{
     width: 65%;
-    margin-top:20px;
+    h1{
+      margin-top:60px ;
+    }
   }
   .header{
-    position: relative;
+    position: fixed;
+    z-index: 2;
     height: 80px;
     width: 100%;
+    background: white;
+    opacity: 0.9;
     ul{
       width: 100%;
       li{
         width: 6em;
-        padding-top: 35px;
-        height: 42px;
+
+        height: 100%;
+        a{
+          padding-top:33px;
+          height:47px;
+
+        }
+        a:hover{
+          background: deepskyblue;
+          color: white;
+        }
+      }
+      li-active{
+        border-bottom: orange solid 3px;
       }
     }
 
   }
   .nav{
-    padding-top: 20px;
+
+    padding-top: 100px;
     width: 1180px;
     ul{
       width:1000px;
@@ -55,8 +73,9 @@ body {
     display: block;
   }
   .MainPage{
-    width: 100%;
+    width: 90%;
     margin-top: 50px;
+    //padding:2%;
   }
   .header{
     overflow: scroll;
@@ -80,10 +99,13 @@ body {
       //padding-top:10%;
       li{
         width:100%;
-        border-bottom: 0.1px solid gainsboro;
+        //border-bottom: 1px solid gainsboro;
+        margin:1px 0 1px 0;
+        box-shadow: gainsboro  1px 1px 2px ;
+
         height:3em;
         a{
-          margin-top:1em;
+          padding:1em 0 1em 0;
         }
       }
     }
@@ -104,7 +126,14 @@ body {
       margin-top: 60px;
       li{
         width:100%;
-        margin:0;
+        margin:5px auto;
+        h2{
+          margin:8px;
+        }
+        a:hover{
+          background: deepskyblue;
+          color: white;
+        }
       }
     }
   }
@@ -129,7 +158,8 @@ a {
 }
 
 a:hover {
-  color: deepskyblue;
+  background: deepskyblue;
+  color: white;
 }
 
 .browserupgrade {
@@ -159,10 +189,9 @@ a:hover {
     margin: 0;
     height: 100%;
     width: 100%;
+    padding:0;
     li {
       margin: 0;
-
-
       float: left;
       a {
         width: 100%;
@@ -170,12 +199,7 @@ a:hover {
       }
 
     }
-    li:hover {
-      border-bottom: orange solid 3px;
-    }
-    li-active{
-      border-bottom: orange solid 3px;
-    }
+
   }
 }
 
@@ -262,8 +286,9 @@ p5{
 
   margin-left: auto;
   margin-right: auto;
-  padding: 2%;
+  padding: 5%;
   box-shadow: gainsboro 1px 1px 50px;
+  background: white;
   h1 {
     text-align: center;
   }
@@ -301,10 +326,11 @@ p5{
   padding:0;
   height:100%;
   width:100%;
-  background: gray;
+  background: black;
   opacity: 0;
 }
 .blurBG-active{
-  opacity: 0.7;
+  opacity: 0.4;
 }
+
 

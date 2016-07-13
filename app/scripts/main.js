@@ -3,7 +3,7 @@ $(document).ready(function () {
 
 
 
-  $('.header-moblie').on('click',function () {
+  $('.moblie-menu').on('click',function () {
     $('.blurBG').css('display','block');
     $('.header').addClass('header-active');
     setTimeout(function () {
